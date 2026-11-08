@@ -10,10 +10,10 @@
 
 <!-- Badges de Contato e Certificações -->
 <p align="center">
-  <a href="https://www.linkedin.com/in/SEU-LINKEDIN-AQUI/" target="_blank">
+  <a href="https://www.linkedin.com/in/hugo-campos-b2a678273/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
-  <a href="mailto:SEU-EMAIL-AQUI">
+  <a href="mailto:hugoargerio@gmail.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
   <img src="https://img.shields.io/badge/IBM_Certified-Data_Engineer-052FAD?style=for-the-badge&logo=ibm&logoColor=white" alt="IBM Data Engineer" />
@@ -52,7 +52,7 @@
   <img src="https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=Apache%20Airflow&logoColor=white" />
   <img src="https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white" />
   <img src="https://img.shields.io/badge/Apache_Spark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white" />
-  <img src="https://img.shields.io/badge/Delta_Lake-003366?style=for-the-badge&logo=deltalake&logoColor=white" />
+ <img src="https://img.shields.io/badge/Delta_Lake-00ADD8?style=for-the-badge&logo=deltalake&logoColor=white" />
   <img src="https://img.shields.io/badge/Snowflake-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white" />
 </p>
 
