@@ -1,7 +1,7 @@
 <div align="center">
 
 # Hugo Argeri Campos
-### Data Engineer & Backend Python Developer | Agentic AI Workflows
+### Data Engineer & Python Backend Developer | Python, SQL, PySpark, Airflow | Databricks & Snowflake | Comércio Exterior (COMEX), Conciliação Cambial (PTAX) & Regulação Aduaneira
 
 <p align="center">
   Engenharia de dados resiliente, construção de APIs determinísticas em <b>FastAPI</b>, modelagem relacional/dimensional em <b>PostgreSQL</b> e automação em ambiente <b>Linux nativo</b>.<br>
