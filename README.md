@@ -26,10 +26,10 @@
 
 ### ⚡ Arquitetura & Diferencial de Domínio
 
-- **Data Ingestion & Resiliência:** Desenvolvimento de motores de **ingestão de dados** tolerantes a falhas (tratamento de concorrência, *Exponential Backoff with Full Jitter* via `Tenacity`, *Idempotent Upserts* e *Data Contracts* estritos com `Pydantic`).
-- **Backend & Persistência:** Construção de REST APIs em `Python` e `FastAPI` integradas a bancos relacionais (`PostgreSQL` / `SQLite`) e arquiteturas *Medallion Lakehouse* (`Databricks`, `PySpark`, `Delta Lake`, `Snowflake`).
-- **AI Coding & Agentic AI:** Orquestração de fluxos de desenvolvimento assistidos por agentes autônomos (*Claude Code*, *LLMs*, *Tool Calling*), testes automatizados (`pytest`) e isolamento em containers `Docker`.
-- **Domínio Aplicado (Comex & Finanças):** Graduando em **Tecnólogo em Comércio Exterior (PUCRS)**. Capacidade prática de traduzir processos regulatórios, documentos fiscais internacionais (*Commercial Invoices*, NCM/HS Code, Incoterms) e conciliação cambial multi-moeda (PTAX/Spot) em modelos de dados auditáveis.
+- **Data Ingestion & Resiliência:** Desenvolvimento de motores de **ingestão de dados** tolerantes a falhas (tratamento de concorrência, *Exponential Backoff with Full Jitter* via `Tenacity`, *Idempotent Upserts* e *Data Contracts* estritos com `Pydantic V2`).
+- **Backend & Persistência Fiduciária:** Construção de REST APIs em `Python 3.12` e `FastAPI` integradas a bancos relacionais (`PostgreSQL 16` com integridade ACID estrita, triggers PL/pgSQL e razão de partidas dobradas) e arquiteturas *Medallion Lakehouse* (`DuckDB`, `PySpark`, `Delta Lake`, `Snowflake`).
+- **AI Coding & Agentic AI:** Orquestração de fluxos de desenvolvimento assistidos por agentes autônomos (*Claude Code*, *OpenAI Codex*, *Antigravity CLI*, *Tool Calling/MCP*), governança com contratos executáveis (*ODCS v3.2.0*), testes automatizados determinísticos (`pytest`) e isolamento em containers `Docker`.
+- **Domínio Aplicado (Comex & Finanças):** Graduando em **Tecnólogo em Comércio Exterior (PUCRS)**. Capacidade prática de traduzir processos regulatórios aduaneiros, documentos fiscais internacionais (*Commercial Invoices*, NCM/HS Code, Incoterms FOB/CIF) e conciliação cambial multi-moeda (BACEN PTAX / Spot) em modelos de dados auditáveis.
 
 ---
 
@@ -49,7 +49,7 @@
 **Engenharia de Dados, Bancos & Lakehouse**
 <p>
   <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
+  <img src="https://img.shields.io/badge/DuckDB-FFF000?style=for-the-badge&logo=duckdb&logoColor=black" />
   <img src="https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=Apache%20Airflow&logoColor=white" />
   <img src="https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white" />
   <img src="https://img.shields.io/badge/Apache_Spark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white" />
@@ -75,15 +75,13 @@
 
 | Projeto | Arquitetura & Escopo Técnico | Stack Principal |
 | :--- | :--- | :--- |
-| 📊 **[MacroFlow-Lakehouse](https://github.com/hugoargerio-glitch/MacroFlow-Lakehouse)** | Plataforma de dados macroeconômicos e financeiros. **Ingestão de dados** de APIs oficiais (BACEN/PTAX e Yahoo Finance) com validação estrita de esquemas, arquitetura Medallion e governança CI/CD. | `Python` `Pydantic` `Databricks` `Delta Lake` `Snowflake` `Airflow` |
-| 🚢 **[end-to-end-comex-data-pipeline](https://github.com/hugoargerio-glitch/end-to-end-comex-data-pipeline)** | Motor de **ingestão de dados** mercantis e aduaneiros. Implementa resiliência de rede (*Tenacity Exponential Backoff*), armazenamento colunar Parquet, modelagem dimensional no PostgreSQL e orquestração automatizada. | `Python` `PostgreSQL` `Tenacity` `Parquet` `Airflow` `Docker` |
-| 🎯 **[B2B-Price-Market-Monitor](https://github.com/hugoargerio-glitch/B2B-Price-Market-Monitor)** | Sistema autônomo de monitoramento competitivo e triagem algorítmica. Executa coleta concorrente, deduplicação transacional relacional (`UNIQUE constraints`) e disparo de *webhooks* interativos para decisão *Human-in-the-Loop*. | `Python` `SQL` `Cron/Linux` `REST APIs` `Webhooks` |
-
+| 🏛️ **[comex-data-engine-v2](https://github.com/hugoargerio-glitch/comex-data-engine-v2)** | **Motor Fiduciário e Ingestão Aduaneira:** Razão contábil *append-only* de partidas dobradas com invariante de soma zero e triggers PL/pgSQL (PostgreSQL 16) bloqueando UPDATE/DELETE. Conector live BACEN Olinda PTAX com precisão `Decimal('0.000001')` e algoritmo LOCF, motor de cálculo tributário em cascata (ICMS "por dentro"), esteira HITL para quarentena de inconsistências e 31 testes unitários determinísticos (Pytest). | `Python 3.12` `FastAPI` `PostgreSQL 16` `Pydantic V2` `Tenacity` `Pytest` `Docker` |
+| ⚡ **[b2b-price-monitor](https://github.com/hugoargerio-glitch/b2b-price-monitor)** | **Enterprise Dual-Hash CDC Engine & Transactional Outbox:** Motor de captura de mudanças de preços e estoque governado pelo contrato ODCS v3.2.0. Validação *shift-left* `DECIMAL(18,4)` (Zero FLOAT), motor diff determinístico via SHA-256 (`entity_key` + `state_hash`), persistência ACID em SQLite 3 WAL (`BEGIN IMMEDIATE`), Domain Circuit Breaker estatístico ($N \ge 10$, falhas $> 20\%$) e Transactional Outbox assíncrono com Exponential Backoff e Full Jitter para Discord/Slack webhooks. 65 testes automatizados (0.26s). | `Python 3.12` `SQLite 3 WAL` `Pydantic V2` `ODCS v3.2.0` `Docker` `Pytest` |
+| 📊 **[MacroFlow-Lakehouse](https://github.com/hugoargerio-glitch/MacroFlow-Lakehouse)** | **Plataforma de Séries Macroeconômicas e Câmbio:** Ingestão distribuída de dados financeiros de APIs oficiais (BACEN SGS e Yahoo Finance) com validação *shift-left* via contratos de dados em Pydantic V2 para neutralizar *schema drift*, arquitetura Medallion (Delta Lake) e Data Warehouse dimensional em Snowflake com políticas FinOps de suspensão automática. | `Python` `Pydantic` `Databricks` `Delta Lake` `Snowflake` `Airflow` |
 ---
 
 ### 🎓 Formação & Certificações Oficiais
 
 - 🎓 **Tecnólogo em Comércio Exterior** — *Pontifícia Universidade Católica do Rio Grande do Sul (PUCRS)*
-- 🏅 **IBM Data Engineering Professional Certificate** — *Credly Verified*
 - 🏅 **IBM Data Architect Professional Certificate** — *Credly Verified*
-- 🏅 **Google Agile Project Management Professional Certificate** — *Credly Verified*
+- 🏅 **IBM Data Engineering Professional Certificate** — *Credly Verified*
