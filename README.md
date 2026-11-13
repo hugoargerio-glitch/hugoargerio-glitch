@@ -33,7 +33,7 @@
 
 ---
 
-### 🛠️ Tech Stack Nuclear
+### 🛠️ Tech Stack
 
 <div align="center">
 
